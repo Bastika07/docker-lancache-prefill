@@ -56,6 +56,11 @@ The three per-tool cron scripts and the three install/update blocks in
 `start-server.sh` are deliberately parallel copies — when changing one tool's logic,
 apply the same change to the other two.
 
+`truenas/` contains TrueNAS SCALE packaging: a docker-compose.yaml for "Custom App →
+Install via YAML" and `truenas/lancache-prefill/` in the truenas/apps catalog format
+(app.yaml, questions.yaml, ix_values.yaml, Jinja2 template using ix_lib). Both must be
+kept in sync with the Dockerfile env vars.
+
 ## Conventions
 
 - All defaults and env vars are declared in the Dockerfile (`ENV` lines); the README

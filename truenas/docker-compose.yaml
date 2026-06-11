@@ -1,0 +1,36 @@
+# LANCache Prefill als TrueNAS "Custom App"
+#
+# Apps -> Discover Apps -> ... -> Install via YAML
+# Vorher anpassen:
+#   - dns:        IP eures LanCache-DNS (sonst läuft der Prefill am Cache vorbei!)
+#                 Zeilen entfernen, falls LanCache-DNS netzwerkweit aktiv ist.
+#   - volumes:    Host-Pfad zu einem existierenden Dataset
+#   - TZ:         eure Zeitzone (wichtig für die Cron-Zeiten)
+services:
+  lancache-prefill:
+    image: ich777/lancache-prefill:latest
+    container_name: lancache-prefill
+    restart: unless-stopped
+    dns:
+      - 192.168.1.10
+    environment:
+      TZ: "Europe/Berlin"
+      ENABLE_STEAM: "true"
+      PREFILL_PARAMS_STEAM: "--recent"
+      CRON_SCHED_STEAM: "0 2 * * *"
+      ENABLE_EPIC: "false"
+      PREFILL_PARAMS_EPIC: ""
+      CRON_SCHED_EPIC: "0 4 * * *"
+      ENABLE_BN: "false"
+      PREFILL_PARAMS_BN: ""
+      CRON_SCHED_BN: "0 5 * * *"
+      CRON_SCHED_GLOBAL: ""
+      UPDATES: "true"
+      PREFILL_ONSTARTUP: "false"
+      LOGCLEANUP: "true"
+      UID: "568"
+      GID: "568"
+      UMASK: "0000"
+      DATA_PERM: "770"
+    volumes:
+      - /mnt/tank/apps/lancache-prefill:/lancacheprefill

@@ -1,0 +1,12 @@
+images:
+  image:
+    repository: ich777/lancache-prefill
+    tag: latest
+
+consts:
+  prefill_container_name: lancache-prefill
+  data_dir: /lancacheprefill
+
+# The container expects a permissive umask by default (Dockerfile default 0000),
+# overriding the library default of 002.
+UMASK: "0000"

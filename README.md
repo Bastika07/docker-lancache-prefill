@@ -4,6 +4,7 @@ This container will download and install [BattleNetPrefill](https://github.com/t
 # Table of contents
 
 - [Initial Setup](#initial-setup)
+- [TrueNAS](#truenas)
 - [Need Help?](#need-help)
 - [Updating](#updating)
 - [Run Example](#run-example)
@@ -32,6 +33,9 @@ It is recommended to run this container in the same network mode as **LANCache-D
 
 ### DNS
 It is strongly recommended that you set the DNS manually to use **LANCache-DNS** if you haven't configured it to be network wide on your LAN. To do that turn on the advanced view (toggle switch in the top right corner) and at the extra parameters append: `--dns=XXX.XXX.XXX.XXX` (of course replace *XXX.XXX.XXX.XXX* with the IP address of your LANCache-DNS).
+
+# TrueNAS
+This container also runs on TrueNAS SCALE (24.10 "Electric Eel" or newer). See the [truenas/](truenas/) directory for a ready-to-use Custom App compose file and a catalog app structure for the official community train. Full instructions: [truenas/README.md](truenas/README.md)
 
 # Need Help?
 Support Thread: https://forums.unraid.net/topic/83786-support-ich777-application-dockers/

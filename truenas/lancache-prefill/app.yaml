@@ -1,0 +1,48 @@
+app_version: latest
+capabilities:
+- description: LANCache Prefill is able to change file ownership arbitrarily
+  name: CHOWN
+- description: LANCache Prefill is able to bypass file permission checks
+  name: DAC_OVERRIDE
+- description: LANCache Prefill is able to bypass permission checks for file operations
+  name: FOWNER
+- description: LANCache Prefill is able to change group ID of processes
+  name: SETGID
+- description: LANCache Prefill is able to change user ID of processes
+  name: SETUID
+categories:
+- games
+changelog_url: ''
+date_added: '2026-06-11'
+description: LANCache Prefill downloads and runs BattleNetPrefill, EpicPrefill and
+  SteamPrefill on a cron schedule to keep a LanCache instance warm
+home: https://github.com/Bastika07/docker-lancache-prefill
+host_mounts: []
+icon: https://raw.githubusercontent.com/ich777/docker-templates/master/ich777/images/prefill.png
+keywords:
+- lancache
+- prefill
+- games
+lib_version: 2.3.4
+lib_version_hash: 2e3a8847308fb2eb0da046018f287c73822c094b5950a10377c3235794ff1242
+maintainers:
+- email: basti.ka2007@gmail.com
+  name: Bastika07
+  url: https://github.com/Bastika07
+name: lancache-prefill
+run_as_context:
+- description: Container [lancache-prefill] runs as root user and group, then drops
+    privileges to the configured user and group for the prefill processes.
+  gid: 0
+  group_name: Host group is [root]
+  uid: 0
+  user_name: Host user is [root]
+screenshots: []
+sources:
+- https://github.com/Bastika07/docker-lancache-prefill
+- https://github.com/ich777/docker-lancache-prefill
+- https://github.com/tpill90/steam-lancache-prefill
+- https://hub.docker.com/r/ich777/lancache-prefill
+title: LANCache Prefill
+train: community
+version: 1.0.0
